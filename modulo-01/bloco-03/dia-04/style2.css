@@ -16,12 +16,21 @@ nav {
 
 nav ul {
   padding: 0;
+  text-align: center;
 }
 
 nav ul li {
   list-style: none;
   display: inline-block;
-  margin: 0 12%;
+  padding: 0 5%;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 h1, h2 {
