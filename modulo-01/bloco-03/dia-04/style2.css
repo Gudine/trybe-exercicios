@@ -84,3 +84,14 @@ aside {
   font-size: 1.4em;
   font-style: italic;
 }
+
+footer {
+  text-align: center;
+  background-color:navy;
+  color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  font-style: italic;
+}
