@@ -2,26 +2,36 @@ h1 {
   text-align: center;
 }
 
-.first {
-  background-color: rgb(235, 200, 84);
+section.mainlist ul {
+  text-align: center;
+  padding-left: 0;
+}
+.first, .second, .third {
   font-size: 20px;
   height: 50px;
   text-align: center;
+  display: inline-block;
+}
+.first {
+  background-color: rgb(235, 200, 84);
   width: 200px;
+  display: block;
+  margin:auto;
 }
 
 .second {
   background-color: rgb(219, 219, 219);
-  font-size: 20px;
-  height: 50px;
-  text-align: center;
   width: 300px;
 }
 
 .third {
   background-color: rgb(170, 142, 106);
-  font-size: 20px;
-  height: 50px;
-  text-align: center;
   width: 300px;
+}
+
+section.sidelist * {
+  text-align: center;
+}
+section.sidelist ul li {
+  display: inline;
 }
