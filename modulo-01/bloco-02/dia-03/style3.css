@@ -1,0 +1,7 @@
+h1, p {text-align: center;}
+
+li:hover {background-color: aqua;}
+
+li:active {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+
+ul, li {list-style: none;}
