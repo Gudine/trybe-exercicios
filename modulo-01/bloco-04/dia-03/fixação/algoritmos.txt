@@ -1,0 +1,57 @@
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+==1
+Para cada <valor> dentro de <numbers>:
+  Imprimir <valor>
+
+==2
+Definir variável <soma>, com valor inicial de 0
+Para cada <valor> dentro de <numbers>:
+  Definir <soma> como: <valor> + <soma>
+
+==3
+Definir variável <média>, com valor inicial de:
+  <soma> / tamanho de itens em <numbers>
+Imprimir <média>
+
+==4
+Se <média> for maior que 20:
+  Imprimir "valor maior que 20"
+Caso contrário:
+  Imprimir "valor menor ou igual a 20"
+
+==5
+Definir variável <maior>, com valor inicial de:
+  Primeiro item de <numbers>
+Para cada <valor> dentro de <numbers>:
+  Se <valor> for maior que <maior>:
+    Definir <maior> como <valor>
+Imprimir <maior>
+
+==6
+Definir variável <ímpar>, com valor inicial de 0
+Para cada <valor> dentro de <numbers>:
+  Se <valor> for ímpar:
+    Definir <ímpar> como <ímpar> + 1
+Se <ímpar> for maior que 0:
+  Imprima <ímpar>
+Caso contrário:
+  Imprima "nenhum valor ímpar encontrado"
+
+==7
+Definir variável <menor>, com valor inicial de:
+  Primeiro item de <numbers>
+Para cada <valor> dentro de <numbers>:
+  Se <valor> for menor que <menor>:
+    Definir <menor> como <valor>
+Imprimir <menor>
+
+==8
+Definir variável <newarray>, com valor inicial de (lista vazia)
+Para cada <número> entre 1 e 25:
+  Guardar <número> em <newarray>
+Imprimir <newarray>
+
+==9
+Para cada <valor> dentro de <newarray>:
+    Imprimir <valor> / 2
