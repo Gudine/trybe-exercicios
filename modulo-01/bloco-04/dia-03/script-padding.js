@@ -1,66 +1,48 @@
-const n = 5;
+const n = 9;
 
 // 1. Quadrado
 for (let i = 0; i < n; i += 1) {
-  let line = "";
-  for (let j = 0; j < n; j += 1) {
-    line += "*";
-  }
-  console.log(line);
+  console.log("".padStart(n, "*"));
 }
 
 console.log("");
 // 2. Triângulo retângulo a esquerda
 for (let i = 0; i < n; i += 1) {
-  let line = "";
-  for (let j = 0; j <= i; j += 1) {
-    line += "*";
-  }
-  console.log(line);
+  console.log("".padStart(i+1, "*"));
 }
 
 console.log("");
 // 3. Triângulo retângulo a direita
 for (let i = 0; i < n; i += 1) {
-  let line = "";
-  for (let j = 0; j < n; j += 1) {
-    if (j >= n-1-i) {line += "*"}
-    else {line += " "};
-  }
-  console.log(line);
+  console.log("".padStart(i+1, "*").padStart(n, " "));
 }
 
 console.log("");
 // 4. Pirâmide
 let rows = Math.ceil(n/2);
-
 for (let i = 0; i < rows; i += 1) {
-  let line = "";
   let spaces = (rows - 1) - i;
 
-  for (let j = 0; j < n - spaces; j += 1) {
-    if (j < spaces) {line += " "}
-    else {line += "*"};
-  }
-  console.log(line);
+  let output = "".padStart(n - spaces*2, "*");
+  output = output.padStart(output.length + spaces, " ");
+  console.log(output);
 }
 
 console.log("");
 // Bônus 5. Pirâmide Vazia
 for (let i = 0; i < rows; i += 1) {
-  let line = "";
   let spaces = (rows - 1) - i;
-
-  for (let j = 0; j < n - spaces; j += 1) {
-    if (j == spaces || j == (n - spaces - 1)) {
-      line += "*";
-    } else if (i == rows - 1) {
-      line += "*";
-    } else {
-      line += " ";
-    }
+  if (i == rows - 1) {
+    let output = "".padStart(n - spaces*2, "*");
+    output = output.padStart(output.length + spaces, " ");
+    console.log(output);
+  } else {
+    let output = "*".padStart(spaces + 1, " ");
+    output = output.padEnd(n - spaces - 1, " ");
+    output = output.padEnd(n - spaces, "*");
+    output = output.padEnd(n, " ");
+    console.log(output);
   }
-  console.log(line);
 }
 
 console.log("");
