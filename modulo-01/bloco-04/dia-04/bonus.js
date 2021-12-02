@@ -37,25 +37,21 @@ console.log(romanoParaArabico("MCMXCVII"));
 // Bônus 2
 
 function flatten(array) {
-/*   let unchanged = false;
+  let unchanged = false;
   while (!unchanged) {
     unchanged = true;
-    for (let x in array) {
-      if (Array.isArray(array[x])) {
+    let newArray = [];
+    for (let x of array) {
+      if (Array.isArray(x)) {
         unchanged = false;
-        let temp = array.slice(0,x);
-        temp = temp.concat(array[x]);
-        let log = [array, x, array.slice(x+1)];
-        temp = temp.concat(array.slice(x+1));
-        array = temp;
-        break;
+        newArray = newArray.concat(x);
+      } else {
+        newArray.push(x);
       }
     }
+    array = newArray;
   }
-  return array; */
-  let result = String(array);
-  result = result.split(",");
-  return result.map(Number);
+  return array;
 }
 
 function arrayOfNumbers(array) {
