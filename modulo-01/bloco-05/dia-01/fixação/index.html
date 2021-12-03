@@ -8,23 +8,23 @@
       <p id="second-paragraph" class="paragraph">Segundo parágrafo!</p>
     </header>
     <script>
-      const paragraph = document.getElementById("paragraph");
+      const paragraph = document.querySelector("#paragraph");
       paragraph.style.color = "red";
 
-      const title = document.getElementById("page-title");
+      const title = document.querySelector("#page-title");
       title.innerText = "Vingadores: Ultimato";
       
-      const secondparagraph = document.getElementById("second-paragraph");
+      const secondparagraph = document.querySelector("#second-paragraph");
       secondparagraph.style.textAlign = "center";
       secondparagraph.style.textDecoration = "line-through";
       
-      const subtitle = document.getElementById("subtitle");
+      const subtitle = document.querySelector("#subtitle");
       subtitle.style.fontSize = "50px";
 
-      const paragraphs = document.getElementsByClassName("paragraph");
+      const paragraphs = document.querySelectorAll(".paragraph");
       paragraphs[0].style.textDecoration = "underline";
 
-      const headers = document.getElementsByTagName("h4");
+      const headers = document.querySelectorAll("h4");
       headers[0].style.color = "green";
     </script>
   </body>
