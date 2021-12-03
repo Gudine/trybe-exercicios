@@ -70,13 +70,20 @@
           let header = document.getElementsByClassName("title")[0];
           header.innerText = "Exercício 5.1 - JavaScript";
         }
-        /* 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-        6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
+        /* 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo. */
+        function upperText() {
+          let ps = document.getElementsByTagName("p");
+
+          for (let x of ps) {
+            x.innerText = x.innerText.toUpperCase();
+          }
+        }
+        /* 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
         futureSelf();
         yellowToGreen();
         redToWhite();
         typoCorrection();
+        upperText();
     </script>
   </body>
 </html>
