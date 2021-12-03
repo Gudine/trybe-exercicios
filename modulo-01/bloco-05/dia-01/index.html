@@ -65,13 +65,18 @@
           let center = document.getElementsByClassName("center-content")[0];
           center.style.backgroundColor = "white";
         }
-        /* 4. Crie uma função que corrija o texto da tag <h1>.
-        5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+        /* 4. Crie uma função que corrija o texto da tag <h1>. */
+        function typoCorrection() {
+          let header = document.getElementsByClassName("title")[0];
+          header.innerText = "Exercício 5.1 - JavaScript";
+        }
+        /* 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
         futureSelf();
         yellowToGreen();
         redToWhite();
+        typoCorrection();
     </script>
   </body>
 </html>
