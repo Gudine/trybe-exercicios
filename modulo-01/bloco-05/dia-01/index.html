@@ -79,11 +79,20 @@
           }
         }
         /* 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
+        function logParagraphs() {
+          let ps = document.getElementsByTagName("p");
+
+          for (let x of ps) {
+            console.log(x.innerHTML);
+          }
+        }
+        
         futureSelf();
         yellowToGreen();
         redToWhite();
         typoCorrection();
         upperText();
+        logParagraphs();
     </script>
   </body>
 </html>
