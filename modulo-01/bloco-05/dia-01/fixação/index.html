@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.querySelector("#paragraph");
+      paragraph.style.color = "red";
+
+      const title = document.querySelector("#page-title");
+      title.innerText = "Vingadores: Ultimato";
+      
+      const secondparagraph = document.querySelector("#second-paragraph");
+      secondparagraph.style.textAlign = "center";
+      secondparagraph.style.textDecoration = "line-through";
+      
+      const subtitle = document.querySelector("#subtitle");
+      subtitle.style.fontSize = "50px";
+
+      const paragraphs = document.querySelectorAll(".paragraph");
+      paragraphs[0].style.textDecoration = "underline";
+
+      const headers = document.querySelectorAll("h4");
+      headers[0].style.color = "green";
+    </script>
+  </body>
+</html>
