@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+
+  <script>
+    let current = document.getElementById("elementoOndeVoceEsta");
+
+    let parent = current.parentNode;
+    parent.style.color = "blue";
+
+    let child = current.firstElementChild;
+    child.innerText = "Teste";
+
+    let firstChild = parent.firstElementChild;
+    console.log(firstChild);
+
+    firstChild2 = current.previousElementSibling;
+    console.log(firstChild2);
+
+    let warning = current.nextSibling;
+    console.log(warning);
+
+    let thirdChild = current.nextElementSibling;
+    console.log(thirdChild);
+
+    let thirdChild2 = parent.children[2];
+    console.log(thirdChild2);
+
+    //Criando elementos
+    let newSibling = document.createElement("div");
+    current.parentElement.appendChild(newSibling);
+
+    let newChild = document.createElement("div");
+    current.appendChild(newChild);
+
+    let newChild2 = document.createElement("div");
+    child.appendChild(newChild2);
+
+    let thirdChild3 = newChild2.parentElement.parentElement.nextElementSibling;
+    console.log(thirdChild3);
+
+    //Removendo elementos
+    let paiDoPai = document.getElementById("paiDoPai");
+    console.log(paiDoPai);
+    let allowList = ["pai", "elementoOndeVoceEsta", "primeiroFilhoDoFilho"];
+
+    function recursiveRemoval(baseElement) {
+      for (let i = 0; i < baseElement.children.length; i += 1) {
+        let currElem = baseElement.children[i];
+        if (!allowList.includes(currElem.id)) {
+          baseElement.removeChild(currElem);
+          i -= 1;
+        } else if (currElem.children.length) {
+          recursiveRemoval(currElem);
+        }
+      }
+    }
+
+    function elementsRemoval(baseElement) {
+      let elems = baseElement.querySelectorAll("*");
+      for (let elem of elems) {
+        if (!allowList.includes(elem.id)) {
+          elem.remove();
+        }
+      }
+    }
+
+    elementsRemoval(paiDoPai);
+
+  </script>
+</body>
+</html>
