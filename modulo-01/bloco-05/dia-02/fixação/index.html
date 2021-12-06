@@ -26,8 +26,8 @@
     let parent = current.parentNode;
     parent.style.color = "blue";
 
-    let next = current.firstElementChild;
-    next.innerText = "Teste";
+    let child = current.firstElementChild;
+    child.innerText = "Teste";
 
     let firstChild = parent.firstElementChild;
     console.log(firstChild);
@@ -43,6 +43,19 @@
 
     let thirdChild2 = parent.children[2];
     console.log(thirdChild2);
+
+    //Criando elementos
+    let newSibling = document.createElement("div");
+    current.parentElement.appendChild(newSibling);
+
+    let newChild = document.createElement("div");
+    current.appendChild(newChild);
+
+    let newChild2 = document.createElement("div");
+    child.appendChild(newChild2);
+
+    let thirdChild3 = newChild2.parentElement.parentElement.nextElementSibling;
+    console.log(thirdChild3);
   </script>
 </body>
 </html>
