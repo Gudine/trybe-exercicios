@@ -95,6 +95,18 @@
       img.classList.add("small-image");
       leftContent.appendChild(img);
 
+      // Requisito 8
+      let ul = document.createElement("ul");
+      let listValues = ["um", "dois", "três", "quatro",
+                        "cinco", "seis", "sete", "oito",
+                        "nove", "dez"];
+      for (let x of listValues) {
+        let li = document.createElement("li");
+        li.innerText = x;
+        ul.appendChild(li);
+      }
+      rightContent.appendChild(ul);
+
     </script>
   </body>
 </html>
