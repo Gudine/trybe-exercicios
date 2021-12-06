@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+
+  <script>
+    let current = document.getElementById("elementoOndeVoceEsta");
+
+    let parent = current.parentNode;
+    parent.style.color = "blue";
+
+    let next = current.firstElementChild;
+    next.innerText = "Teste";
+
+    let firstChild = parent.firstElementChild;
+    console.log(firstChild);
+
+    firstChild2 = current.previousElementSibling;
+    console.log(firstChild2);
+
+    let warning = current.nextSibling;
+    console.log(warning);
+
+    let thirdChild = current.nextElementSibling;
+    console.log(thirdChild);
+
+    let thirdChild2 = parent.children[2];
+    console.log(thirdChild2);
+  </script>
+</body>
+</html>
