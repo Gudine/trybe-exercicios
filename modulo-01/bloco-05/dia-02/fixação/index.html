@@ -74,7 +74,16 @@
       }
     }
 
-    recursiveRemoval(paiDoPai);
+    function elementsRemoval(baseElement) {
+      let elems = baseElement.querySelectorAll("*");
+      for (let elem of elems) {
+        if (!allowList.includes(elem.id)) {
+          elem.remove();
+        }
+      }
+    }
+
+    elementsRemoval(paiDoPai);
 
   </script>
 </body>
