@@ -137,6 +137,16 @@
       // Requisito de Alteração 5
       let centerContentParent = document.querySelector(".center-content").parentElement;
       centerContentParent.style.backgroundColor = "green";
+
+      // Requisito de Alteração 6
+      ul = document.querySelector("ul");
+
+      li = ul.lastElementChild;
+      for (let i = 0; i < 2; i += 1) {
+        let next = li.previousElementSibling;
+        ul.removeChild(li);
+        li = next;
+      }
     </script>
   </body>
 </html>
