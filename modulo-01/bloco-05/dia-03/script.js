@@ -25,6 +25,7 @@ function createDaysOfTheMonth() {
     let dayLi = document.createElement("li");
     dayLi.innerText = day;
     dayLi.classList.add("day");
+    dayLi.style.transition = "font-size .1s";
 
     if (holidays.includes(day)) {
       dayLi.classList.add("holiday");
@@ -110,3 +111,25 @@ function addEventToFridayButton() {
 }
 
 addEventToFridayButton();
+
+// Requisito 6
+function addZoomInToDays() {
+  let days = document.querySelectorAll(".day");
+  for (let day of days) {
+    day.addEventListener("mouseover", function(ev) {
+      ev.target.style.fontSize = "40px";
+    })
+  }
+}
+
+function addZoomOutToDays() {
+  let days = document.querySelectorAll(".day");
+  for (let day of days) {
+    day.addEventListener("mouseout", function(ev) {
+      ev.target.style.fontSize = "20px";
+    })
+  }
+}
+
+addZoomInToDays();
+addZoomOutToDays();
