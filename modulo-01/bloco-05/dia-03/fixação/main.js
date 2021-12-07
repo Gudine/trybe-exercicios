@@ -3,7 +3,18 @@ const secondLi = document.getElementById('second-li');
 const thirdLi = document.getElementById('third-li');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('my-spotrybefy');
+const liList = [firstLi, secondLi, thirdLi];
+let liDefault = ["", "", ""];
 
+let tech;
+let techI;
+let ordinals = ["primeira", "segunda", "terceira"];
+
+function getTech() {
+  // Adquire o li tech e sua posição
+  tech = document.querySelector(".tech");
+  techI = [...tech.parentNode.children].indexOf(tech);
+}
 
 // 1. Copie esse arquivo e edite apenas ele;
 // 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
@@ -12,17 +23,21 @@ const myWebpage = document.getElementById('my-spotrybefy');
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
-firstLi.addEventListener('click', techElevate);
-secondLi.addEventListener('click', techElevate);
-thirdLi.addEventListener('click', techElevate);
+for (let x of liList) {
+  x.addEventListener('click', techElevate);
+}
 
 function techElevate(event) {
-  let liList = [firstLi, secondLi, thirdLi];
   for (let x of liList) {
     x.classList.remove("tech");
   }
 
   event.target.classList.add("tech");
+
+  // Limpa input e altera seu texto padrão
+  getTech();
+  input.value = "";
+  input.placeholder = `Alterar a ${ordinals[techI]} tecnologia`;
 }
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
@@ -30,8 +45,24 @@ function techElevate(event) {
 input.addEventListener('keyup', changeTech);
 
 function changeTech(event) {
-  let tech = document.querySelector(".tech");
-  tech.innerText = event.target.value;
+  getTech();
+  
+  // Se não tiver texto padrão guardado
+  if (liDefault[techI] === "") {
+    // Guarda o texto do li selecionado
+    liDefault[techI] = tech.innerText;
+  }
+
+  let value = event.target.value;
+  // Se a caixa de texto não estiver vazia
+  if (value !== "") {
+    // Copia texto da caixa de texto
+    tech.innerText = value;
+  } else {
+    // Caso contrário, usa texto padrão
+    tech.innerText = liDefault[techI];
+  }
+  
 }
 
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
