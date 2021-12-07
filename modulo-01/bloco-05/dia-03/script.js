@@ -133,3 +133,14 @@ function addZoomOutToDays() {
 
 addZoomInToDays();
 addZoomOutToDays();
+
+// Requisito 7
+function makeTask(string) {
+  let task = document.createElement("span");
+  task.innerText = string;
+  
+  let parent = document.querySelector(".my-tasks");
+  parent.appendChild(task);
+}
+
+makeTask("Cozinhar");
