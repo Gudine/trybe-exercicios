@@ -169,3 +169,33 @@ function addEventToLegend() {
 }
 
 addEventToLegend();
+
+// Requisito 10
+function addLegendToDays() {
+  // Passar por todos os dias e adicionar
+  // um event listener para cada um deles
+  let days = document.querySelectorAll(".day");
+  for (let day of days) {
+    day.addEventListener("click", function(ev) {
+
+      //Encontra a legenda selecionada
+      let legend = document.querySelector(".task.selected");
+      //Sair da função se não tiver nenhuma
+      if (!legend) { return; }
+      let currDay = ev.target;
+
+      // Caso o dia tenha a mesma cor da legenda
+      if (currDay.style.color == legend.style.backgroundColor) {
+        // Muda a cor do dia para a cor padrão
+        currDay.style.color = "rgb(119,119,119)";
+      } else {
+        // Caso contrário, muda a cor do dia
+        // Para a cor da legenda
+        currDay.style.color = legend.style.backgroundColor;
+      }
+
+    })
+  }
+}
+
+addLegendToDays();
