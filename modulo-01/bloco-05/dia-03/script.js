@@ -50,3 +50,27 @@ function makeButton(string) {
 }
 
 makeButton("Feriados");
+
+// Requisito 3
+let buttonToggle = false;
+
+function addEventToButton() {
+  let button = document.querySelector("#btn-holiday");
+  button.addEventListener("click", function() {
+    let color;
+    if (buttonToggle) {
+      buttonToggle = false;
+      color = "rgb(238,238,238)";
+    } else {
+      buttonToggle = true;
+      color = "rgb(200,238,200)";
+    }
+
+    let holidayList = document.querySelectorAll(".holiday");
+    for (let day of holidayList) {
+      day.style.backgroundColor = color;
+    }
+  });
+}
+
+addEventToButton();
