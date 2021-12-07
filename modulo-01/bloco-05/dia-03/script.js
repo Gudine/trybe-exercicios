@@ -144,3 +144,16 @@ function makeTask(string) {
 }
 
 makeTask("Cozinhar");
+
+// Requisito 8
+function addLegendToTask(cor) {
+  let task = document.querySelector(".my-tasks span");
+  let legend = document.createElement("div");
+  legend.classList.add("task");
+  legend.style.backgroundColor = cor;
+
+  task.innerText += ":";
+  task.appendChild(legend);
+}
+
+addLegendToTask("blue");
