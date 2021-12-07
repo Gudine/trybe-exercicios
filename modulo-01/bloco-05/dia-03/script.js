@@ -40,7 +40,7 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 
 // Requisito 2
-function makeButton(string) {
+function makeHolidayButton(string) {
   let button = document.createElement("button");
   button.id = "btn-holiday";
   button.innerText = string;
@@ -49,20 +49,20 @@ function makeButton(string) {
   parent.appendChild(button);
 }
 
-makeButton("Feriados");
+makeHolidayButton("Feriados");
 
 // Requisito 3
-let buttonToggle = false;
+let holidayToggle = false;
 
-function addEventToButton() {
+function addEventToHolidayButton() {
   let button = document.querySelector("#btn-holiday");
   button.addEventListener("click", function() {
     let color;
-    if (buttonToggle) {
-      buttonToggle = false;
+    if (holidayToggle) {
+      holidayToggle = false;
       color = "rgb(238,238,238)";
     } else {
-      buttonToggle = true;
+      holidayToggle = true;
       color = "rgb(200,238,200)";
     }
 
@@ -73,4 +73,40 @@ function addEventToButton() {
   });
 }
 
-addEventToButton();
+addEventToHolidayButton();
+
+// Requisito 4
+function makeFridayButton(string) {
+  let button = document.createElement("button");
+  button.id = "btn-friday";
+  button.innerText = string;
+  
+  let parent = document.querySelector(".buttons-container");
+  parent.appendChild(button);
+}
+
+makeFridayButton("Sexta-feira");
+
+// Requisito 5
+let fridayToggle = false;
+let fridayDays = [];
+
+function addEventToFridayButton() {
+  let button = document.querySelector("#btn-friday");
+  button.addEventListener("click", function() {
+    if (fridayToggle) { fridayToggle = false; }
+    else { fridayToggle = true; };
+
+    let fridayList = document.querySelectorAll(".friday");
+    for (let day of fridayList) {
+      if (fridayToggle) {
+        fridayDays.push(day.innerText);
+        day.innerText = "SEXTOU!!";
+      } else {
+        day.innerText = fridayDays.shift();
+      }
+    }
+  });
+}
+
+addEventToFridayButton();
