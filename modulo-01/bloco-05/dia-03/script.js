@@ -157,3 +157,15 @@ function addLegendToTask(cor) {
 }
 
 addLegendToTask("blue");
+
+// Requisito 9
+function addEventToLegend() {
+  let legends = document.querySelectorAll(".task");
+  for (let legend of legends) {
+    legend.addEventListener("click", function(ev) {
+      ev.target.classList.toggle("selected");
+    })
+  }
+}
+
+addEventToLegend();
