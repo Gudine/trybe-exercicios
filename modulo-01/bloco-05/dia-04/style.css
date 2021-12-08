@@ -1,0 +1,37 @@
+body {
+  /*
+  --bgcolor: blue;
+  --fgcolor: green;
+  --fontsize: 25px;
+  --lineheight: 2em;
+  --fontfamily: 'Courier New', Courier, monospace;
+  */
+  background-color: var(--bgcolor);
+  color: var(--fgcolor);
+  font-size: var(--fontsize);
+  line-height: var(--lineheight);
+  font-family: var(--fontfamily);
+}
+
+header {
+  text-align: center;
+}
+
+#controls {
+  text-align: center;
+}
+
+#controls label {
+  display: block;
+  margin: 10px 0px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 80fr 20fr;
+  gap: 20px;
+}
+
+main {
+  background-color: inherit;
+}
