@@ -1,11 +1,4 @@
 body {
-  /*
-  --bgcolor: blue;
-  --fgcolor: green;
-  --fontsize: 25px;
-  --lineheight: 2em;
-  --fontfamily: 'Courier New', Courier, monospace;
-  */
   background-color: var(--bgcolor);
   color: var(--fgcolor);
   font-size: var(--fontsize);
