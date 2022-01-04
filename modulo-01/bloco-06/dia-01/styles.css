@@ -3,21 +3,41 @@ h1 {
 }
 
 form {
-  width: 50%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
+  border: 2px solid gray;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 
 form > fieldset {
+  background-color: rgb(240, 240, 240);
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  width: 100%;
+  grid-auto-rows: minmax(max-content, 30px);
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   gap: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-fieldset.radio {
+form > fieldset:nth-child(n+2) {
+  margin-top: 30px;
+}
+
+fieldset.radio, label[for="summary"], textarea {
   grid-column: 1 / span 2;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+}
+
+input[type="radio"]:nth-child(n+3) {
+  margin-left: 30px;
 }

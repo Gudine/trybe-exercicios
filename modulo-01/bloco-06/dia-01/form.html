@@ -12,6 +12,8 @@
 
   <form action="" method="get">
     <fieldset>
+      <legend>Dados pessoais:</legend>
+
       <label for="name">Nome:</label>
       <input type="text" name="name" id="name" maxlength=40 required>
 
@@ -32,15 +34,29 @@
 
       <fieldset class="radio">
         <legend>Tipo:</legend>
-        <label for="type-1">
-          <input type="radio" name="type" id="type-1" value="house">Casa
-        </label>
+        
+        <input type="radio" name="type" id="type-1" value="house" required>
+        <label for="type-1">Casa</label>
 
-        <label for="type-2">
-          <input type="radio" name="type" id="type-2" value="apartment">Apartamento
-        </label>
+        <input type="radio" name="type" id="type-2" value="apartment" required>
+        <label for="type-2">Apartamento</label>
       </fieldset>
-      
+    </fieldset>
+
+    <fieldset>
+      <legend>Dados sobre seu último emprego:</legend>
+
+      <label for="summary">Resumo do currículo:</label>
+      <textarea name="summary" id="summary" cols="30" rows="10" maxlength=1000></textarea>
+
+      <label for="occupation">Cargo:</label>
+      <input type="text" name="occupation" id="occupation" maxlength=40 required>
+
+      <label for="occ-desc">Descrição do cargo:</label>
+      <input type="text" name="occ-desc" id="occ-desc" maxlength=500 required>
+
+      <label for="start-date">Data de Início:</label> 
+      <input type="text" name="start-date" id="start-date" placeholder="dd/mm/aaaa" maxlength=10 required>
     </fieldset>
   </form>
 

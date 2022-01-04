@@ -29,6 +29,7 @@ const states = [
 ];
 
 const select = document.getElementById('state');
+const dateElem = document.getElementById('start-date');
 
 for (let x of states) {
   let option = document.createElement('option');
@@ -36,3 +37,28 @@ for (let x of states) {
   option.value = x[1];
   select.appendChild(option);
 }
+
+function verifyDate(ev) {
+  if (ev.key !== 'Enter') { return; }
+  if (ev.target.value.split("/").length !== 3) {
+    alert("ERRO: Formatação errada da data");
+    return;
+  }
+
+  let [d, m, y] = ev.target.value.split("/").map(Number);
+
+  if (d <= 0 || d > 31 || isNaN(d)) {
+    alert("ERRO: Dia inválido");
+    return;
+  }
+  if (m <= 0 || m > 12 || isNaN(m)) {
+    alert("ERRO: Mês inválido");
+    return;
+  }
+  if (y < 0 || isNaN(y)) {
+    alert("ERRO: Ano inválido");
+    return;
+  }
+}
+
+dateElem.addEventListener('keypress', verifyDate);
