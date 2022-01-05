@@ -14,8 +14,8 @@
     <fieldset>
       <legend>Dados pessoais:</legend>
 
-      <label for="name">Nome:</label>
-      <input type="text" name="name" id="name" maxlength=40 required>
+      <label for="full-name">Nome:</label>
+      <input type="text" name="full-name" id="full-name" maxlength=40 required>
 
       <label for="e-mail">E-Mail:</label>
       <input type="text" name="e-mail" id="e-mail" maxlength=50 required>
@@ -33,13 +33,13 @@
       <select name="state" id="state"></select>
 
       <fieldset class="radio">
-        <legend>Tipo:</legend>
+        <legend>Tipo de Moradia:</legend>
         
-        <input type="radio" name="type" id="type-1" value="house" required>
-        <label for="type-1">Casa</label>
+        <input type="radio" name="home-type" id="home-type-1" value="house" required>
+        <label for="home-type-1">Casa</label>
 
-        <input type="radio" name="type" id="type-2" value="apartment" required>
-        <label for="type-2">Apartamento</label>
+        <input type="radio" name="home-type" id="home-type-2" value="apartment" required>
+        <label for="home-type-2">Apartamento</label>
       </fieldset>
     </fieldset>
 
@@ -47,7 +47,7 @@
       <legend>Dados sobre seu último emprego:</legend>
 
       <label for="summary">Resumo do currículo:</label>
-      <textarea name="summary" id="summary" cols="30" rows="10" maxlength=1000></textarea>
+      <textarea name="summary" id="summary" maxlength=1000></textarea>
 
       <label for="occupation">Cargo:</label>
       <input type="text" name="occupation" id="occupation" maxlength=40 required>
@@ -58,8 +58,13 @@
       <label for="start-date">Data de Início:</label> 
       <input type="text" name="start-date" id="start-date" placeholder="dd/mm/aaaa" maxlength=10 required>
     </fieldset>
+
+    <button type="submit" id="submit">Enviar</button>
+    <button type="reset" id="reset">Limpar</button>
   </form>
 
+  <div id="error"></div>
+  <div id="output"></div>
   <script src="script.js"></script>
 </body>
 </html>
