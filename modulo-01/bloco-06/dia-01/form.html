@@ -1,70 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>Formulário</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
 
-  <form action="" method="get">
-    <fieldset>
-      <legend>Dados pessoais:</legend>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="node_modules/moment/locale/pt-br.js"></script>
+    <script src="node_modules/just-validate/dist/just-validate.production.min.js"></script>
+    <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css">
+    <script src="node_modules/pikaday/pikaday.js"></script>
 
-      <label for="full-name">Nome:</label>
-      <input type="text" name="full-name" id="full-name" maxlength=40 required>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <main>
+      <h1 class="title">Formulário</h1>
 
-      <label for="e-mail">E-Mail:</label>
-      <input type="text" name="e-mail" id="e-mail" maxlength=50 required>
+      <form action="" method="get">
+        <fieldset>
+          <h2 class="subtitle">Dados pessoais:</h2>
 
-      <label for="cpf">CPF:</label>
-      <input type="text" name="cpf" id="cpf" maxlength=11 required>
+          <div class="field">
+            <label for="full-name" class="label">Nome:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="full-name"
+                id="full-name"
+                class="input"
+              />
+            </div>
+          </div>
 
-      <label for="address">Endereço:</label> 
-      <input type="text" name="address" id="address" maxlength=200 required>
+          <div class="field">
+            <label for="e-mail" class="label">E-mail:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="e-mail"
+                id="e-mail"
+                class="input"
+              />
+            </div>
+          </div>
 
-      <label for="city">Cidade:</label>
-      <input type="text" name="city" id="city" maxlength=28 required>
+          <div class="field">
+            <label for="cpf" class="label">CPF:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="cpf"
+                id="cpf"
+                class="input"
+              />
+            </div>
+          </div>
 
-      <label for="state">Estado:</label>
-      <select name="state" id="state"></select>
+          <div class="field">
+            <label for="address" class="label">Endereço:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="address"
+                id="address"
+                class="input"
+              />
+            </div>
+          </div>
 
-      <fieldset class="radio">
-        <legend>Tipo de Moradia:</legend>
-        
-        <input type="radio" name="home-type" id="home-type-1" value="house" required>
-        <label for="home-type-1">Casa</label>
+          <div class="columns">
+            <div class="field column">
+              <label for="city" class="label is-normal">Cidade:</label>
+              <div class="control">
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  class="input"
+                />
+              </div>
+            </div>
 
-        <input type="radio" name="home-type" id="home-type-2" value="apartment" required>
-        <label for="home-type-2">Apartamento</label>
-      </fieldset>
-    </fieldset>
+            <div class="field column" id="state-field">
+              <label for="state" class="label">Estado:</label>
+              <div class="control">
+                <div class="select">
+                  <select name="state" id="state" class="input"></select>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <fieldset>
-      <legend>Dados sobre seu último emprego:</legend>
+          <div class="field">
+            <p class="label">Tipo de Moradia:</p>
+            <div class="control" id="home-type">
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="home-type"
+                  id="home-type-1"
+                  value="house"
+                />
+                Casa
+              </label>
+              <label class="radio">
+                <input
+                  type="radio"
+                  name="home-type"
+                  id="home-type-2"
+                  value="apartment"
+                />
+                Apartamento
+              </label>
+            </div>
+          </div>
+        </fieldset>
 
-      <label for="summary">Resumo do currículo:</label>
-      <textarea name="summary" id="summary" maxlength=1000></textarea>
+        <fieldset>
+          <h2 class="subtitle">Dados sobre seu último emprego:</h2>
 
-      <label for="occupation">Cargo:</label>
-      <input type="text" name="occupation" id="occupation" maxlength=40 required>
+          <div class="field">
+            <label for="summary" class="label">Resumo do currículo:</label>
+            <textarea
+              class="textarea"
+              name="summary"
+              id="summary"
+            ></textarea>
+          </div>
 
-      <label for="occ-desc">Descrição do cargo:</label>
-      <input type="text" name="occ-desc" id="occ-desc" maxlength=500 required>
+          <div class="field">
+            <label for="occupation" class="label">Cargo:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="occupation"
+                id="occupation"
+                class="input"
+              />
+            </div>
+          </div>
 
-      <label for="start-date">Data de Início:</label> 
-      <input type="text" name="start-date" id="start-date" placeholder="dd/mm/aaaa" maxlength=10 required>
-    </fieldset>
+          <div class="field">
+            <label for="occ-desc" class="label">Descrição do cargo:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="occ-desc"
+                id="occ-desc"
+                class="input"
+              />
+            </div>
+          </div>
 
-    <button type="submit" id="submit">Enviar</button>
-    <button type="reset" id="reset">Limpar</button>
-  </form>
+          <div class="field">
+            <label for="start-date" class="label">Data de Início:</label>
+            <div class="control">
+              <input
+                type="text"
+                name="start-date"
+                id="start-date"
+                placeholder="dd/mm/aaaa"
+                class="input"
+                required
+              />
+            </div>
+          </div>
+        </fieldset>
 
-  <div id="error"></div>
-  <div id="output"></div>
-  <script src="script.js"></script>
-</body>
+        <div class="field is-grouped">
+          <div class="control">
+            <button type="submit" id="submit" class="button is-success">
+              Enviar
+            </button>
+          </div>
+          <div class="control">
+            <button type="reset" id="reset" class="button is-danger">
+              Limpar
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div id="error"></div>
+      <div id="output"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
