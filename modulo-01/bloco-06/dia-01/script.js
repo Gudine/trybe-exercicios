@@ -1,3 +1,5 @@
+moment.locale('pt-br');
+
 const states = {
   ac: 'Acre',
   al: 'Alagoas',
@@ -37,34 +39,25 @@ const resetBtn = document.getElementById('reset');
 const errorDiv = document.getElementById('error');
 const outputDiv = document.getElementById('output');
 
+const picker = new Pikaday({
+  field: dateElem,
+  format: "dddd, D [de] MMMM [de] YYYY",
+  i18n: {
+    previousMonth : 'Mês Anterior',
+    nextMonth     : 'Próximo Mês',
+    months        : ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    weekdays      : ['Domingo','Segunda-Feira','Terça-Feira','Quarta-Feira','Quinta-Feira','Sexta-Feira','Sábado'],
+    weekdaysShort : ['Dom','Seg','Ter','Qua','Qui','Sex','Sab']
+  },
+});
+const validation = new JustValidate(form);
+
 function populateStates() {
   for (let x in states) {
     let option = document.createElement('option');
     option.innerText = states[x];
     option.value = x;
     select.appendChild(option);
-  }
-}
-
-function verifyDate() {
-  if (dateElem.value.split("/").length !== 3) {
-    alert("ERRO: Formatação errada da data");
-    return "ERRO: Formatação errada da data";
-  }
-
-  let [d, m, y] = dateElem.value.split("/").map(Number);
-
-  if (d <= 0 || d > 31 || isNaN(d)) {
-    alert("ERRO: Dia inválido");
-    return "ERRO: Dia inválido";
-  }
-  if (m <= 0 || m > 12 || isNaN(m)) {
-    alert("ERRO: Mês inválido");
-    return "ERRO: Mês inválido";
-  }
-  if (y < 0 || isNaN(y)) {
-    alert("ERRO: Ano inválido");
-    return "ERRO: Ano inválido";
   }
 }
 
@@ -96,28 +89,8 @@ function generateDiv() {
 
 function submitForm(ev) {
   ev.preventDefault();
-  let fields = ['full-name', 'e-mail', 'cpf', 'address', 'city', 'state', 'home-type', 'summary', 'occupation', 'occ-desc'];
-  errorDiv.innerText = '';
-  let errors = false;
-  
-  for (let x of fields) {
-    if (!v(x)) {
-      errors = true;
-      if (form.elements[x].labels === undefined) {
-        errorDiv.innerText += `Campo "${form.elements[x][0].parentElement.children[0].innerText.slice(0,-1)}" não preenchido.\n`;
-      } else {
-        errorDiv.innerText += `Campo "${form.elements[x].labels[0].innerText.slice(0,-1)}" não preenchido.\n`;
-      }
-    }
-  }
 
-  let dateErr = verifyDate()
-  if (dateErr) {
-    errorDiv.innerText += dateErr;
-    errors = true;
-  }
-
-  if (errors === false) { generateDiv(); }
+  if (form.checkValidity() === true) { generateDiv(); }
 }
 
 function resetForm() {
@@ -126,5 +99,108 @@ function resetForm() {
 }
 
 populateStates();
-submitBtn.addEventListener('click', submitForm);
+//submitBtn.addEventListener('click', submitForm);
 resetBtn.addEventListener('click', resetForm);
+
+validation.globalConfig.errorLabelCssClass = 'help';
+validation
+  .addField('#full-name', [
+    {
+      rule: 'maxLength',
+      value: 40,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Nome não preenchido',
+    },
+  ])
+  .addField('#e-mail', [
+    {
+      rule: 'maxLength',
+      value: 50,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'E-mail não preenchido',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Formatação do e-mail inválida',
+    },
+  ])
+  .addField('#cpf', [
+    {
+      rule: 'maxLength',
+      value: 11,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'CPF não preenchido',
+    },
+  ])
+  .addField('#address', [
+    {
+      rule: 'maxLength',
+      value: 200,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Endereço não preenchido',
+    },
+  ])
+  .addField('#city', [
+    {
+      rule: 'maxLength',
+      value: 28,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Cidade não preenchida',
+    },
+  ])
+  .addField('#state', [
+    {
+      rule: 'required',
+      errorMessage: 'Estado não preenchido',
+    },
+  ])
+  .addRequiredGroup(
+    '#home-type',
+    'Tipo de moradia não preenchido'
+  )
+  .addField('#summary', [
+    {
+      rule: 'maxLength',
+      value: 1000,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Resumo do currículo não preenchido',
+    },
+  ])
+  .addField('#occupation', [
+    {
+      rule: 'maxLength',
+      value: 40,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Cargo não preenchido',
+    },
+  ])
+  .addField('#occ-desc', [
+    {
+      rule: 'maxLength',
+      value: 500,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Cargo não preenchido',
+    },
+  ])
+  .addField('#start-date', [
+    {
+      rule: 'required',
+      errorMessage: 'Data de início não preenchida',
+    },
+  ])

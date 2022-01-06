@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário</title>
+
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="node_modules/moment/locale/pt-br.js"></script>
+    <script src="node_modules/just-validate/dist/just-validate.production.min.js"></script>
+    <link rel="stylesheet" href="node_modules/pikaday/css/pikaday.css">
+    <script src="node_modules/pikaday/pikaday.js"></script>
+
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
     <link rel="stylesheet" href="styles.css"/>
   </head>
@@ -23,23 +30,19 @@
                 type="text"
                 name="full-name"
                 id="full-name"
-                maxlength="40"
                 class="input"
-                required
               />
             </div>
           </div>
 
           <div class="field">
-            <label for="e-mail" class="label">E-Mail:</label>
+            <label for="e-mail" class="label">E-mail:</label>
             <div class="control">
               <input
                 type="text"
                 name="e-mail"
                 id="e-mail"
-                maxlength="50"
                 class="input"
-                required
               />
             </div>
           </div>
@@ -51,9 +54,7 @@
                 type="text"
                 name="cpf"
                 id="cpf"
-                maxlength="11"
                 class="input"
-                required
               />
             </div>
           </div>
@@ -65,9 +66,7 @@
                 type="text"
                 name="address"
                 id="address"
-                maxlength="200"
                 class="input"
-                required
               />
             </div>
           </div>
@@ -80,9 +79,7 @@
                   type="text"
                   name="city"
                   id="city"
-                  maxlength="28"
                   class="input"
-                  required
                 />
               </div>
             </div>
@@ -99,7 +96,7 @@
 
           <div class="field">
             <p class="label">Tipo de Moradia:</p>
-            <div class="control">
+            <div class="control" id="home-type">
               <label class="radio">
                 <input
                   type="radio"
@@ -131,7 +128,6 @@
               class="textarea"
               name="summary"
               id="summary"
-              maxlength="1000"
             ></textarea>
           </div>
 
@@ -142,9 +138,7 @@
                 type="text"
                 name="occupation"
                 id="occupation"
-                maxlength="40"
                 class="input"
-                required
               />
             </div>
           </div>
@@ -156,9 +150,7 @@
                 type="text"
                 name="occ-desc"
                 id="occ-desc"
-                maxlength="500"
                 class="input"
-                required
               />
             </div>
           </div>
@@ -171,7 +163,6 @@
                 name="start-date"
                 id="start-date"
                 placeholder="dd/mm/aaaa"
-                maxlength="10"
                 class="input"
                 required
               />
