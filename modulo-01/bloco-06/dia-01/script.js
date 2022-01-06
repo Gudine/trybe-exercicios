@@ -89,8 +89,7 @@ function generateDiv() {
 
 function submitForm(ev) {
   ev.preventDefault();
-
-  if (form.checkValidity() === true) { generateDiv(); }
+  generateDiv();
 }
 
 function resetForm() {
@@ -99,7 +98,7 @@ function resetForm() {
 }
 
 populateStates();
-//submitBtn.addEventListener('click', submitForm);
+validation.onSuccess(submitForm);
 resetBtn.addEventListener('click', resetForm);
 
 validation.globalConfig.errorLabelCssClass = 'help';
