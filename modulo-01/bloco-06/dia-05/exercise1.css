@@ -11,7 +11,7 @@
 }
 
 body {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 20px;
 }
 
@@ -50,7 +50,7 @@ figcaption {
 @media screen and (min-width: 500px) {
   body {
     background-color: red;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 40px 10%;
   }
 
@@ -62,5 +62,14 @@ figcaption {
 
   figure {
     flex-basis: 48%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: blue;
+    font-size: 1.3rem;
+    margin: 40px auto;
+    max-width: 950px;
   }
 }
