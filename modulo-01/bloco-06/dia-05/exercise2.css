@@ -1,0 +1,89 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: antiquewhite;
+  font-size: 1.2em;
+}
+
+aside, article {
+  margin: 0 20px;
+}
+
+header {
+  background-color: rgb(255, 200, 160);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.3em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px 40px 0;
+}
+
+.aside-one ul {
+  list-style: upper-roman;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.aside-two ul {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+h3 {
+  font-size: 1.05em;
+}
+
+aside {
+  border-bottom: 2px solid black;
+}
+
+.main-content p {
+  margin: 1em 25px;
+}
+
+footer {
+  background-color: rgb(255, 200, 160);
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.8em;
+}
+
+footer h3 {
+  margin-top: 0;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
