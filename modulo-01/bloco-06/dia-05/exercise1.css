@@ -46,3 +46,21 @@ figure {
 figcaption {
   font-size: .8em;
 }
+
+@media screen and (min-width: 500px) {
+  body {
+    background-color: red;
+    font-size: 1rem;
+    margin: 40px 10%;
+  }
+
+  section {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+
+  figure {
+    flex-basis: 48%;
+  }
+}
