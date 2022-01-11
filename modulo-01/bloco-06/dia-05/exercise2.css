@@ -1,0 +1,194 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: antiquewhite;
+  font-size: 1.2em;
+}
+
+aside, article {
+  margin: 0 20px;
+}
+
+header {
+  background-color: rgb(255, 200, 160);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header p {
+  font-size: 1.3em;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+header nav {
+  width: 100%;
+  max-width: 500px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px 40px 0;
+}
+
+.aside-one ul {
+  list-style: upper-roman;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.aside-two ul {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+h3 {
+  font-size: 1.05em;
+}
+
+aside {
+  border-bottom: 2px solid black;
+}
+
+.main-content p {
+  margin: 1em 25px;
+}
+
+footer {
+  background-color: rgb(255, 200, 160);
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.8em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p, footer h3 {
+  margin: 0.6em 0;
+  max-width: 900px;
+}
+
+footer h3 {
+  margin-top: 0;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 1.3em;
+    margin-top: 70px;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  header p {
+    flex-basis: 50%;
+    text-align: left;
+    font-size: 1.2em;
+  }
+
+  header nav {
+    flex-basis: 40%;
+  }
+
+  header nav ul {
+    margin: 0;
+  }
+
+  .main-aside-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+    flex-wrap: wrap;
+  }
+
+  aside {
+    flex-basis: 48%;
+    border: none;
+    margin: 0;
+  }
+
+  aside h2 {
+    text-align: left;
+    margin-left: 25px;
+  }
+
+  article {
+    border-top: 2px solid black;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 1.4em;
+    margin-top: 76px;
+  }
+
+  header p {
+    font-size: 1.4em;
+  }
+
+  .main-aside-container {
+    flex-wrap: nowrap;
+    margin: 10px;
+    align-items: flex-start;
+  }
+
+  article {
+    flex-basis: 55%;
+    flex-shrink: 0;
+    border-top: none;
+  }
+
+  .aside-one {
+    padding-right: 10px;
+    border-right: 2px dotted black;
+  }
+
+  .aside-two {
+    order: 1;
+    border-left: 2px dotted black;
+  }
+}
