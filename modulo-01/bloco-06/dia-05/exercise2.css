@@ -87,10 +87,14 @@ footer {
   margin-top: 20px;
   font-size: 0.8em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer p, footer h3 {
   margin: 0.6em 0;
+  max-width: 900px;
 }
 
 footer h3 {
@@ -104,6 +108,7 @@ footer p:last-child {
 @media screen and (min-width: 800px) {
   body {
     font-size: 1.3em;
+    margin-top: 70px;
   }
 
   header {
@@ -111,11 +116,16 @@ footer p:last-child {
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   header p {
     flex-basis: 50%;
     text-align: left;
+    font-size: 1.2em;
   }
 
   header nav {
@@ -126,11 +136,11 @@ footer p:last-child {
     margin: 0;
   }
 
-  .aside-group {
+  .main-aside-container {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid black;
     margin: 0 40px;
+    flex-wrap: wrap;
   }
 
   aside {
@@ -142,5 +152,43 @@ footer p:last-child {
   aside h2 {
     text-align: left;
     margin-left: 25px;
+  }
+
+  article {
+    border-top: 2px solid black;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 1.4em;
+    margin-top: 76px;
+  }
+
+  header p {
+    font-size: 1.4em;
+  }
+
+  .main-aside-container {
+    flex-wrap: nowrap;
+    margin: 10px;
+    align-items: flex-start;
+  }
+
+  article {
+    flex-basis: 55%;
+    flex-shrink: 0;
+    border-top: none;
+  }
+
+  .aside-one {
+    padding-right: 10px;
+    border-right: 2px dotted black;
+  }
+
+  .aside-two {
+    order: 1;
+    border-left: 2px dotted black;
   }
 }
