@@ -94,3 +94,44 @@ body {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 700px) {
+  body {
+    padding: 0;
+  }
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  #navigation {
+    margin-top: 77px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: initial;
+  }
+
+  #navigation ul {
+    background: #333;
+    flex-direction: column;
+  }
+
+  #navigation li a {
+    border: none;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #content img {
+    max-width: 100%;
+  }
+
+  #aside {
+    display: none;
+  }
+}
