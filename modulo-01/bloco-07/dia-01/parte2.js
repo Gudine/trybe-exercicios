@@ -6,9 +6,11 @@ const factorialOld = (num) => {
   return result;
 }
 
-const factorial = (num, mul = num-1) => num === 0 ? 1 : mul > 1 ? factorial(num * mul, mul - 1) : num;
+const factorialOld2 = (num, mul = num-1) => num === 0 ? 1 : mul > 1 ? factorial(num * mul, mul - 1) : num;
 
-console.log(factorial(5));
+const factorial = (num) => (num === 0 || num === 1) ? 1 : num * factorial(num - 1);
+
+console.log(factorial(4));
 
 /**********************************************/
 
