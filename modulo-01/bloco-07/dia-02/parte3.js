@@ -34,7 +34,7 @@ const allLessons = {
   lesson1: Object.assign({}, lesson1),
   lesson2: Object.assign({}, lesson2),
   lesson3: Object.assign({}, lesson3),
-}
+};
 
 console.log(allLessons);
 
@@ -44,7 +44,7 @@ const totalStudents = (lessons) => {
     result += lesson.numeroEstudantes;
   }
   return result;
-}
+};
 
 console.log(totalStudents(allLessons));
 
@@ -56,3 +56,33 @@ const verifyPair = (obj, key, value) => Object.keys(obj).includes(key) && obj[ke
 
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+
+// Bônus
+const countLessonsSpectators = (lessons, subject) => {
+  let result = 0;
+  for (let lesson of Object.values(lessons)) {
+    if (lesson.materia === subject) {
+      result += lesson.numeroEstudantes;
+    }
+  }
+  return result;
+};
+
+console.log(countLessonsSpectators(allLessons, 'Matemática'));
+
+const createReport = (lessons, teacher) => {
+  let result = {
+    professor: teacher,
+    aulas: [],
+    estudantes: 0,
+  };
+  for (let lesson of Object.values(lessons)) {
+    if (lesson.professor === teacher) {
+      result.aulas.push(lesson.materia);
+      result.estudantes += lesson.numeroEstudantes;
+    }
+  }
+  return result;
+};
+
+console.log(createReport(allLessons, 'Maria Clara'))
