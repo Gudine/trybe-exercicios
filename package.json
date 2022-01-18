@@ -1,0 +1,23 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "## Português",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gudine/trybe-exercicios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gudine/trybe-exercicios/issues"
+  },
+  "homepage": "https://github.com/Gudine/trybe-exercicios#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
