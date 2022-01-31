@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Gudine/trybe-exercicios#readme",
   "devDependencies": {
     "jest": "^27.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
   }
 }
