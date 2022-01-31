@@ -6,13 +6,26 @@ const processPrice = (price) => {
   return dollars.match(/\d{1,3}(?=(\d{3})*$)/g).join('.') + ',' + cents;
 };
 
+const createElemShort = (tag, classes, text, parent) => {
+  const result = document.createElement(tag);
+  result.className = classes;
+  result.innerText = text;
+  parent.appendChild(result);
+}
+
 const displaySingleCoin = (coin) => {
   const { symbol, name, priceUsd } = coin;
-
   const price = processPrice(priceUsd);
 
   const li = document.createElement('li');
-  li.innerText = `[${symbol}] ${name}: \$${price}`;
+  const container = document.createElement('div');
+  container.className = 'container';
+  
+  const symbolDiv = createElemShort('div', 'symbol', symbol, li);
+  const nameDiv = createElemShort('div', 'name', name, container);
+  const priceDiv = createElemShort('div', 'price', `\$${price}`, container);
+
+  li.appendChild(container);
   ol.appendChild(li);
 }
 
