@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header, .footer {
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.list > li {
+  width: 380px;
+  margin: 10px;
+  padding: 10px;
+  background-color: bisque;
+  text-align: center;
+}
+
+.list-content {
+  font-weight: 700;
+}
+
+.list-status {
+  font-style: italic;
+}
