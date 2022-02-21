@@ -1,0 +1,32 @@
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.pkmn-cont {
+  display: flex;
+  align-items: center;
+  background-color: beige;
+  margin: 10px 20px;
+  flex-basis: 300px;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border: 2px solid black;
+}
+
+.pkmn-cont > * {
+  flex-basis: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+}
+
+.pkmn-left p {
+  margin: 4px 0;
+}
