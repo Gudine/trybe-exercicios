@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Password from './Password';
+import TribeSelect from './TribeSelect';
 
 class Form extends Component {
   constructor() {
@@ -10,15 +12,31 @@ class Form extends Component {
       tribe: 'A',
       feedback: '',
       agreement: false,
+      formularioComErros: false,
+      error_password: false,
+      error_tribe: false,
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleError = this.handleError.bind(this);
   }
 
   handleInput({ target }) {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({[name]: value});
+  }
+
+  handleError(name, error) {
+    console.log(error);
+    this.setState(({error_password, error_tribe}) => {
+      const result = {
+        error_password, error_tribe,
+        [`error_${name}`]: !!error,
+      }
+      result.formularioComErros = !!(result.error_password || result.error_tribe)
+      return result
+    });
   }
 
   render() { 
@@ -36,27 +54,16 @@ class Form extends Component {
               onChange={this.handleInput}
             />
           </label>
-          <label>
-            Senha:
-            <input
-              name='password'
-              type='password'
-              value={this.state.password}
-              onChange={this.handleInput}
-            />
-          </label>
-          <label>
-            Tribo:
-            <select
-              name='tribe'
-              value={this.state.tribe}
-              onChange={this.handleInput}
-            >
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
-          </label>
+          <Password
+            value={this.state.password}
+            handleInput={this.handleInput}
+            handleError={this.handleError}
+          />
+          <TribeSelect
+            value={this.state.tribe}
+            handleInput={this.handleInput}
+            handleError={this.handleError}
+          />
         </fieldset>
         <fieldset>
           <legend>Informações a enviar</legend>
